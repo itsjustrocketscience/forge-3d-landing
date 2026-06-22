@@ -25,12 +25,23 @@
             
             <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
-                <input type="hidden" name="subject" value="Forge 3D: New 2D Modeling Job (Check for Diagram Discount)">
+                <input type="hidden" name="subject" value="Forge 3D: New 2D Modeling Job">
                 <input type="checkbox" name="botcheck" style="display: none;">
 
                 <div class="input-row">
                     <div class="input-group"><label>Name</label><input type="text" name="operator_name" required placeholder="Your Name"></div>
-                    <div class="input-group"><label>Interlocking Requirements</label><input type="text" name="interlock_specs" placeholder="e.g., T-slots, tabs, mortise joints"></div>
+                    <div class="input-group">
+                        <label>Target Event</label>
+                        <select name="target_event" required>
+                            <option value="" disabled selected>Select your event...</option>
+                            <option value="Roller Coaster">Roller Coaster</option>
+                            <option value="Scrambler">Scrambler</option>
+                            <option value="Boomilever">Boomilever</option>
+                            <option value="Ping Pong Parachute">Ping Pong Parachute</option>
+                            <option value="Hovercraft">Hovercraft</option>
+                            <option value="Elastic Launched Glider">Elastic Launched Glider</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="input-group">
@@ -42,12 +53,12 @@
                     <div class="input-group">
                         <label style="display: flex; justify-content: space-between; align-items: center;">
                             <span>Upload Reference Drawing</span>
-                            <span style="color: #22c55e; font-size: 0.75rem; font-weight: bold;">[ 3% DISCOUNT APPLIED IF ATTACHED ]</span>
+                            <span style="color: #22c55e; font-size: 0.75rem; font-weight: bold;">[ 3% DISCOUNT IF ATTACHED ]</span>
                         </label>
                         <div class="file-input-wrapper" style="border-color: rgba(34, 197, 94, 0.4);">
-                            <input type="file" name="cad_vector_file" accept="image/*,.pdf" required>
+                            <input type="file" name="cad_vector_file" accept="image/*,.pdf">
                         </div>
-                        <small>Attach your layout diagram or structural concept sketch to claim your discount.</small>
+                        <small>Optional: Attach your layout diagram or structural concept sketch to claim your discount.</small>
                     </div>
 
                     <div class="input-group">
