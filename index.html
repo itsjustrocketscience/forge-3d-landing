@@ -3,133 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forge 3D Printing & Modeling</title>
+    <title>Forge 3D // Precision Manufacturing</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="hero">
-        <div class="glitch-wrapper">
-            <h1 class="terminal-text">> FORGE_3D_PRINTING_AND_MODELING</h1>
-        </div>
-        <p class="subtitle">Precision CAD & Manufacturing // Powered by Bambu Lab A1</p>
+        <h1 class="brand-title">Forge 3D</h1>
+        <p class="subtitle">Precision CAD, 3D Printing & Laser Cutting for Division B</p>
     </header>
 
-    <main>
-        <section class="portal-container">
+    <main class="central-container">
+        
+        <section class="card capabilities-section">
+            <h2>Core Capabilities</h2>
+            <p class="section-intro">Custom parts engineered to exact tournament regulations. Maximize physical stability, ensure structural uniformity, and accelerate your build iterations.</p>
             
-            <div class="portal scioly-portal">
-                <h2>[ SYSTEM: ACADEMIC & SCIOLY HUB ]</h2>
-                <p>High-precision components optimized for tournament rules, weight limits, and rapid mechanical testing.</p>
-                <div class="spec-sheet">
-                    <p class="spec-line"><span class="label">PRIMARY_TARGET:</span> Rollercoaster, Robot Tour, Scrambler</p>
-                    <p class="spec-line"><span class="label">MAX_TOLERANCE:</span> ± 0.1mm</p>
-                    <p class="spec-line"><span class="label">MATERIAL_STK:</span> High-Rigidity PLA / PETG</p>
+            <div class="specs-wrapper">
+                <div class="spec-column">
+                    <p><span class="label">Production:</span> Bambu Lab A1 (FDM)</p>
+                    <p><span class="label">Laser Engine:</span> 40W Precision Laser Module</p>
+                    <p><span class="label">Design Core:</span> Autodesk Fusion & LibreCAD</p>
                 </div>
-                <a href="#scioly-order" class="btn btn-blue">INITIALIZE_ORDER</a>
-            </div>
-
-            <div class="portal commercial-portal">
-                <h2>[ SYSTEM: COMMERCIAL PROTOTYPING ]</h2>
-                <p>Functional end-use parts, 2D vector laser optimization, and bespoke engineering solutions for general use.</p>
-                <div class="spec-sheet">
-                    <p class="spec-line"><span class="label">PRIMARY_TARGET:</span> Custom Parts, Replacement Gears, Layouts</p>
-                    <p class="spec-line"><span class="label">ENGINE_2D:</span> LibreCAD Vector Processing</p>
-                    <p class="spec-line"><span class="label">HARDWARE_AL:</span> 40W Laser Module Ready</p>
+                <div class="spec-column">
+                    <p><span class="label">Tolerances:</span> Fine Precision (± 0.1mm)</p>
+                    <p><span class="label">Compliance:</span> 100% Event Rules Legal</p>
+                    <p><span class="label">Payments:</span> Zelle Transfer / IOU Ledger</p>
                 </div>
-                <a href="#commercial-order" class="btn btn-orange">INITIALIZE_ORDER</a>
             </div>
-
         </section>
 
-        <section class="forms-container">
-            
-            <div id="scioly-order" class="form-wrapper blue-glow">
-                <h3>[ INGESTION_MODULE: SCIOLY_REQUEST ]</h3>
+        <section class="events-section">
+            <h2>2027 Event Specializations</h2>
+            <div class="event-grid">
                 
-                <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
-                    <input type="hidden" name="subject" value="New SciOly Order for Forge 3D">
+                <div class="event-card">
+                    <div class="event-badge">RC-2027</div>
+                    <h3>Roller Coaster</h3>
+                    <p>Rigid track backing templates, parabolic jump ramps, micro-adjustable leveling feet, and swappable friction inserts.</p>
+                </div>
 
-                    <div class="input-group">
-                        <label for="scioly-name">Operator Name:</label>
-                        <input type="text" id="scioly-name" name="name" required placeholder="Enter your name">
-                    </div>
+                <div class="event-card">
+                    <div class="event-badge">SC-2027</div>
+                    <h3>Scrambler</h3>
+                    <p>Lightweight chassis frames, modular axle blocks, sensor brackets, and mechanical braking triggers.</p>
+                </div>
 
-                    <div class="input-group">
-                        <label for="scioly-event">Target Event [DATA_INPUT_01]:</label>
-                        <select id="scioly-event" name="event" required>
-                            <option value="" disabled selected>Select event matrix...</option>
-                            <option value="Rollercoaster">[RC-2026] Rollercoaster</option>
-                            <option value="Robot Tour">[RT-2026] Robot Tour</option>
-                            <option value="Scrambler">[SC-2026] Scrambler</option>
-                            <option value="Flight">[FL-2026] Flight</option>
-                            <option value="Tower">[TW-2026] Tower</option>
-                            <option value="Custom">[SPEC-X] Custom / Other Event</option>
-                        </select>
-                    </div>
+                <div class="event-card">
+                    <div class="event-badge">BL/EG</div>
+                    <h3>Structural & Flight</h3>
+                    <p>Custom alignment jigs for Boomilever joints, precision sanding guides, and balsa testing templates.</p>
+                </div>
 
-                    <div class="input-group">
-                        <label for="scioly-specs">Parameter Overrides [DATA_INPUT_02]:</label>
-                        <textarea id="scioly-specs" name="specifications" rows="4" required placeholder="e.g., Need a track connector with a 15-degree bank angle, or max width constraints..."></textarea>
-                    </div>
+                <div class="event-card">
+                    <div class="event-badge">HC-2027</div>
+                    <h3>Hovercraft</h3>
+                    <p>Aero-optimized thrust shrouds, micro motor mounts, and low-friction rudder linkages.</p>
+                </div>
 
-                    <div class="input-group">
-                        <label for="scioly-file">File Ingestion [DATA_INPUT_03]:</label>
-                        <input type="file" id="scioly-file" name="cad_file" accept=".step,.stl,.dxf" required>
-                        <small>Accepted formats: .step, .stl, .dxf</small>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="scioly-payment">Transaction Verification [DATA_INPUT_04]:</label>
-                        <input type="text" id="scioly-payment" name="payment_method" required placeholder="Type 'Zelle Account Name' or 'IOU'">
-                    </div>
-
-                    <button type="submit" class="submit-btn btn-blue">SUBMIT_SPECIFICATIONS</button>
-                </form>
             </div>
-
-            <div id="commercial-order" class="form-wrapper orange-glow">
-                <h3>[ INGESTION_MODULE: COMMERCIAL_REQUEST ]</h3>
-                <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
-                    <input type="hidden" name="subject" value="New Commercial Order for Forge 3D">
-
-                    <div class="input-group">
-                        <label for="comm-name">Client/Company Name:</label>
-                        <input type="text" id="comm-name" name="name" required placeholder="Enter name or entity">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="comm-type">Application Class:</label>
-                        <select id="comm-type" name="application_type" required>
-                            <option value="" disabled selected>Select utility class...</option>
-                            <option value="Mechanical">Mechanical / Functional Component</option>
-                            <option value="Aesthetic">Aesthetic / Display Model</option>
-                            <option value="Laser2D">2D Laser Cutting Vector (LibreCAD)</option>
-                            <option value="Prototyping">Rapid Prototyping Iteration</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="comm-specs">Design Requirements:</label>
-                        <textarea id="comm-specs" name="specifications" rows="4" required placeholder="Describe dimensions, mechanical loads, environmental exposure, or material preferences..."></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="comm-file">Upload Schema:</label>
-                        <input type="file" id="comm-file" name="cad_file" accept=".step,.stl,.dxf" required>
-                    </div>
-
-                    <button type="submit" class="submit-btn btn-orange">REQUEST_COMMERCIAL_QUOTE</button>
-                </form>
-            </div>
-
         </section>
+
+        <section id="order" class="card form-section">
+            <h2>Submit Project Specifications</h2>
+            <p class="form-subtitle">Fill out the matrix below to transmit your design file and production requirements.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
+                <input type="hidden" name="subject" value="Forge 3D: New Project Request">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="operator_name" required placeholder="Alex Mercer">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="event">Target Event</label>
+                        <select id="event" name="target_event" required>
+                            <option value="" disabled selected>Select your event...</option>
+                            <option value="Roller Coaster">Roller Coaster</option>
+                            <option value="Scrambler">Scrambler</option>
+                            <option value="Boomilever">Boomilever</option>
+                            <option value="Elastic Launch Glider">Elastic Launch Glider</option>
+                            <option value="Hovercraft">Hovercraft</option>
+                            <option value="Ping Pong Parachute">Ping Pong Parachute</option>
+                            <option value="Custom_Other">Other Division B Event</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="specs">Design Requirements & Parameters</label>
+                    <textarea id="specs" name="parameter_overrides" rows="4" required placeholder="Describe dimensions, weight limits, or specific problems you need solved..."></textarea>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="file">Attach CAD / Vector Schema</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="file" name="cad_vector_file" accept=".step,.stl,.dxf" required>
+                        </div>
+                        <small>Supported: .step, .stl, .dxf</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="payment">Payment Verification</label>
+                        <input type="text" id="payment" name="transaction_verification" required placeholder="Zelle name or 'IOU'">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit to Forge 3D</button>
+            </form>
+        </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 FORGE 3D PRINTING & MODELING // CORE_SYSTEM_ONLINE</p>
+        <p>&copy; 2026 Forge 3D Modeling & Printing // Division B Active</p>
     </footer>
 
 </body>
