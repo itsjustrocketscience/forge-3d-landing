@@ -25,14 +25,15 @@
             
             <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
-                <input type="hidden" name="subject" value="Forge 3D: New 3D Modeling Job (Check for Sketch Discount)">
+                <input type="hidden" name="subject" value="Forge 3D: New 3D Modeling Job">
                 <input type="checkbox" name="botcheck" style="display: none;">
 
                 <div class="input-row">
-                    <div class="input-group"><label>Name</label><input type="text" name="operator_name" required placeholder="Your Name"></div>
+                    <div class="input-group"><label for="name">Name</label><input type="text" id="name" name="operator_name" required placeholder="Your Name"></div>
                     <div class="input-group">
-                        <label>Target Event</label>
-                        <select name="target_event" required>
+                        <label for="event">Target Event</label>
+                        <select id="event" name="target_event" required>
+                            <option value="" disabled selected>Select your event...</option>
                             <option value="Roller Coaster">Roller Coaster</option>
                             <option value="Scrambler">Scrambler</option>
                             <option value="Boomilever">Boomilever</option>
@@ -44,25 +45,25 @@
                 </div>
                 
                 <div class="input-group">
-                    <label>Geometric & Physical Constraints</label>
-                    <textarea name="parameter_overrides" rows="5" required placeholder="Specify your envelope dimensions, shaft diameters, bolt circles, or mating faces..."></textarea>
+                    <label for="specs">Geometric & Physical Constraints</label>
+                    <textarea id="specs" name="parameter_overrides" rows="5" required placeholder="Specify your envelope dimensions, shaft diameters, bolt circles, or mating faces..."></textarea>
                 </div>
 
                 <div class="input-row">
                     <div class="input-group">
                         <label style="display: flex; justify-content: space-between; align-items: center;">
                             <span>Upload Dimension Sketch / Photo</span>
-                            <span style="color: #22c55e; font-size: 0.75rem; font-weight: bold;">[ 3% DISCOUNT APPLIED IF ATTACHED ]</span>
+                            <span style="color: #22c55e; font-size: 0.75rem; font-weight: bold;">[ 3% DISCOUNT IF ATTACHED ]</span>
                         </label>
                         <div class="file-input-wrapper" style="border-color: rgba(34, 197, 94, 0.4);">
-                            <input type="file" name="cad_vector_file" accept="image/*,.pdf" required>
+                            <input type="file" id="file" name="cad_vector_file" accept="image/*,.pdf">
                         </div>
-                        <small>Attach a clear blueprint, hand-drawn sketch, or photo reference to claim your discount.</small>
+                        <small>Optional: Attach a blueprint, hand-drawn sketch, or photo reference to claim your discount.</small>
                     </div>
 
                     <div class="input-group">
-                        <label>Payment Verification</label>
-                        <input type="text" name="transaction_verification" required placeholder="Zelle name or 'IOU'">
+                        <label for="payment">Payment Verification</label>
+                        <input type="text" id="payment" name="transaction_verification" required placeholder="Zelle name or 'IOU'">
                     </div>
                 </div>
                 <button type="submit" class="submit-btn">Initiate CAD Design Pipeline</button>
