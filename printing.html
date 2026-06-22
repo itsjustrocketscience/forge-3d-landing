@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge 3D // 3D Printing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="central-container">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Forge 3D</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Hub</a></li>
+                <li><a href="printing.html" class="active">3D Print</a></li>
+                <li><a href="laser.html">Laser</a></li>
+                <li><a href="modeling-3d.html">3D CAD</a></li>
+                <li><a href="modeling-2d.html">2D CAD</a></li>
+            </ul>
+        </nav>
+
+        <section class="card form-section">
+            <h2>3D Printing Request Engine [Bambu Lab A1]</h2>
+            <p class="form-subtitle">Upload your finalized .stl or .step mesh file for hardware fabrication.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
+                <input type="hidden" name="subject" value="Forge 3D: New 3D Print Task">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <div class="input-row">
+                    <div class="input-group"><label for="name">Name</label><input type="text" id="name" name="operator_name" required></div>
+                    <div class="input-group">
+                        <label for="event">Event Focus</label>
+                        <select id="event" name="target_event" required>
+                            <option value="Roller Coaster">Roller Coaster</option>
+                            <option value="Scrambler">Scrambler</option>
+                            <option value="Hovercraft">Hovercraft</option>
+                            <option value="Other">Other Div B</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group"><label for="specs">Material / Infill Requirements</label><textarea id="specs" name="parameter_overrides" rows="3" placeholder="e.g., 30% Gyroid infill, Black PLA, high structural strength..."></textarea></div>
+                <div class="input-row">
+                    <div class="input-group"><label>Attach 3D Asset File (.stl/.step)</label><div class="file-input-wrapper"><input type="file" name="cad_vector_file" accept=".step,.stl" required></div></div>
+                    <div class="input-group"><label>Payment Verification</label><input type="text" name="transaction_verification" required placeholder="Zelle details or 'IOU'"></div>
+                </div>
+                <button type="submit" class="submit-btn">Transmit 3D Print File</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
