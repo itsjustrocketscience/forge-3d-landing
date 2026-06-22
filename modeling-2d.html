@@ -25,17 +25,35 @@
             
             <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
-                <input type="hidden" name="subject" value="Forge 3D: New 2D Modeling Job">
+                <input type="hidden" name="subject" value="Forge 3D: New 2D Modeling Job (Check for Diagram Discount)">
                 <input type="checkbox" name="botcheck" style="display: none;">
 
                 <div class="input-row">
-                    <div class="input-group"><label>Name</label><input type="text" name="operator_name" required></div>
+                    <div class="input-group"><label>Name</label><input type="text" name="operator_name" required placeholder="Your Name"></div>
                     <div class="input-group"><label>Interlocking Requirements</label><input type="text" name="interlock_specs" placeholder="e.g., T-slots, tabs, mortise joints"></div>
                 </div>
-                <div class="input-group"><label>Layout Dimension Rules</label><textarea name="parameter_overrides" rows="5" required placeholder="Describe width, length, clear holes spacing, or bounding geometries..."></textarea></div>
+
+                <div class="input-group">
+                    <label>Layout Dimension Rules</label>
+                    <textarea name="parameter_overrides" rows="5" required placeholder="Describe width, length, clear holes spacing, or bounding geometries..."></textarea>
+                </div>
+
                 <div class="input-row">
-                    <div class="input-group"><label>Upload Reference Drawing</label><div class="file-input-wrapper"><input type="file" name="cad_vector_file" accept="image/*,.pdf" required></div></div>
-                    <div class="input-group"><label>Payment Verification</label><input type="text" name="transaction_verification" required placeholder="Zelle or 'IOU'"></div>
+                    <div class="input-group">
+                        <label style="display: flex; justify-content: space-between; align-items: center;">
+                            <span>Upload Reference Drawing</span>
+                            <span style="color: #22c55e; font-size: 0.75rem; font-weight: bold;">[ 3% DISCOUNT APPLIED IF ATTACHED ]</span>
+                        </label>
+                        <div class="file-input-wrapper" style="border-color: rgba(34, 197, 94, 0.4);">
+                            <input type="file" name="cad_vector_file" accept="image/*,.pdf" required>
+                        </div>
+                        <small>Attach your layout diagram or structural concept sketch to claim your discount.</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Payment Verification</label>
+                        <input type="text" name="transaction_verification" required placeholder="Zelle or 'IOU'">
+                    </div>
                 </div>
                 <button type="submit" class="submit-btn">Initiate Vector Generation</button>
             </form>
