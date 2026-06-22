@@ -3,134 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forge 3D // Precision Manufacturing</title>
+    <title>Forge 3D // Central Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="hero">
-        <h1 class="brand-title">Forge 3D</h1>
-        <p class="subtitle">Precision CAD, 3D Printing & Laser Cutting for Division B</p>
-    </header>
+    <div class="central-container">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Forge 3D</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Hub</a></li>
+                <li><a href="printing.html">3D Print</a></li>
+                <li><a href="laser.html">Laser</a></li>
+                <li><a href="modeling-3d.html">3D CAD</a></li>
+                <li><a href="modeling-2d.html">2D CAD</a></li>
+            </ul>
+        </nav>
 
-    <main class="central-container">
-        
-        <section class="card capabilities-section">
-            <h2>Core Capabilities</h2>
-            <p class="section-intro">Custom parts engineered to exact tournament regulations. Maximize physical stability, ensure structural uniformity, and accelerate your build iterations.</p>
-            
-            <div class="specs-wrapper">
-                <div class="spec-column">
-                    <p><span class="label">Production:</span> Bambu Lab A1 (FDM)</p>
-                    <p><span class="label">Laser Engine:</span> 40W Precision Laser Module</p>
-                    <p><span class="label">Design Core:</span> Autodesk Fusion & LibreCAD</p>
-                </div>
-                <div class="spec-column">
-                    <p><span class="label">Tolerances:</span> Fine Precision (± 0.1mm)</p>
-                    <p><span class="label">Compliance:</span> 100% Event Rules Legal</p>
-                    <p><span class="label">Payments:</span> Zelle Transfer / IOU Ledger</p>
-                </div>
-            </div>
-        </section>
+        <header class="hero">
+            <h1 class="brand-title">Forge 3D</h1>
+            <p class="subtitle">Division B Manufacturing Command Center</p>
+        </header>
 
         <section class="events-section">
-            <h2>2027 Event Specializations</h2>
+            <h2>Select Operation Module</h2>
             <div class="event-grid">
                 
-                <div class="event-card">
-                    <div class="event-badge">RC-2027</div>
-                    <h3>Roller Coaster</h3>
-                    <p><strong>NEW EVENT</strong> Tracks, feet, fasteners, and more.</p>
-                </div>
+                <a href="printing.html" style="text-decoration: none; display: block; flex: 1; min-width: 380px;">
+                    <div class="event-card">
+                        <div class="event-badge">A1_FDM</div>
+                        <h3>3D Printing</h3>
+                        <p>High-speed fabrication using our Bambu Lab A1 system. Ideal for components in Roller Coaster, Scrambler, and Hovercraft.</p>
+                    </div>
+                </a>
 
-                <div class="event-card">
-                    <div class="event-badge">SC-2027</div>
-                    <h3>Scrambler</h3>
-                    <p>Chassis frames and parts.</p>
-                </div>
+                <a href="laser.html" style="text-decoration: none; display: block; flex: 1; min-width: 380px;">
+                    <div class="event-card">
+                        <div class="event-badge">40W_BEAM</div>
+                        <h3>Laser Cutting</h3>
+                        <p>Precision vector cutting for acrylic, wood, and panel components. Optimized for fast structural iteration.</p>
+                    </div>
+                </a>
 
-                <div class="event-card">
-                    <div class="event-badge">BL-2027</div>
-                    <h3>Boomilever</h3>
-                    <p>Laser-cut balsa parts.</p>
-                </div>
+                <a href="modeling-3d.html" style="text-decoration: none; display: block; flex: 1; min-width: 380px;">
+                    <div class="event-card">
+                        <div class="event-badge">FUSION</div>
+                        <h3>3D Modeling</h3>
+                        <p>Turn sketches or rules requirements into precise, parametric 3D models ready for production. Functional parts design.</p>
+                    </div>
+                </a>
 
-                <div class="event-card">
-                    <div class="event-badge">EG-2027</div>
-                    <h3>Elastic-Launched Glider</h3>
-                    <p><strong>NEW EVENT</strong> Laser-cut balsa parts and alignment jigs.</p>
-                </div>
-
-                <div class="event-card">
-                    <div class="event-badge">HC-2027</div>
-                    <h3>Hovercraft</h3>
-                    <p>Mounts for components and additional accessories.</p>
-                </div>
-
-                <div class="event-card">
-                    <div class="event-badge">3P-2027</div>
-                    <h3>Ping Pong Parachute</h3>
-                    <p><strong>NEW EVENT</strong> Fins and other accessories.</p>
-                </div>
+                <a href="modeling-2d.html" style="text-decoration: none; display: block; flex: 1; min-width: 380px;">
+                    <div class="event-card">
+                        <div class="event-badge">LIBRE_CAD</div>
+                        <h3>2D Modeling</h3>
+                        <p>Flat structural engineering design. Creation of precise interlocking tabs, chassis layers, and flat mechanical patterns.</p>
+                    </div>
+                </a>
 
             </div>
         </section>
-
-        <section id="order" class="card form-section">
-            <h2>Submit Project Specifications</h2>
-            <p class="form-subtitle">Fill out the matrix below to transmit your design file and production requirements.</p>
-            
-            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
-                <input type="hidden" name="subject" value="Forge 3D: New Project Request">
-                <input type="checkbox" name="botcheck" style="display: none;">
-
-                <div class="input-row">
-                    <div class="input-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="operator_name" required placeholder="John Doe">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="event">Target Event</label>
-                        <select id="event" name="target_event" required>
-                            <option value="" disabled selected>Select your event...</option>
-                            <option value="Roller Coaster">Roller Coaster</option>
-                            <option value="Scrambler">Scrambler</option>
-                            <option value="Boomilever">Boomilever</option>
-                            <option value="Elastic Launch Glider">Elastic Launch Glider</option>
-                            <option value="Hovercraft">Hovercraft</option>
-                            <option value="Ping Pong Parachute">Ping Pong Parachute</option>
-                            <option value="Custom_Other">Other Division B Event</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="specs">Design Requirements & Parameters</label>
-                    <textarea id="specs" name="parameter_overrides" rows="4" required placeholder="Describe dimensions, weight limits, or specific problems you need solved..."></textarea>
-                </div>
-
-                <div class="input-row">
-                    <div class="input-group">
-                        <label for="file">Attach CAD / Vector Schema</label>
-                        <div class="file-input-wrapper">
-                            <input type="file" id="file" name="cad_vector_file" accept=".step,.stl,.dxf" required>
-                        </div>
-                        <small>Supported: .step, .stl, .dxf</small>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="payment">Payment Verification</label>
-                        <input type="text" id="payment" name="transaction_verification" required placeholder="Zelle name or 'IOU'">
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn">Submit to Forge 3D</button>
-            </form>
-        </section>
-
-    </main>
+    </div>
 
     <footer>
         <p>&copy; 2026 Forge 3D Modeling & Printing // Division B Active</p>
