@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge 3D // 2D Modeling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="central-container">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Forge 3D</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Hub</a></li>
+                <li><a href="printing.html">3D Print</a></li>
+                <li><a href="laser.html">Laser</a></li>
+                <li><a href="modeling-3d.html">3D CAD</a></li>
+                <li><a href="modeling-2d.html" class="active">2D CAD</a></li>
+            </ul>
+        </nav>
+
+        <section class="card form-section">
+            <h2>2D Engineering Blueprinting [LibreCAD Vectoring]</h2>
+            <p class="form-subtitle">Request precision 2D vector file maps configured directly for laser production paths.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="access_key" value="60244860-342f-433a-b18b-185693dde8d4">
+                <input type="hidden" name="subject" value="Forge 3D: New 2D Modeling Job">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <div class="input-row">
+                    <div class="input-group"><label>Name</label><input type="text" name="operator_name" required></div>
+                    <div class="input-group"><label>Interlocking Requirements</label><input type="text" name="interlock_specs" placeholder="e.g., T-slots, tabs, mortise joints"></div>
+                </div>
+                <div class="input-group"><label>Layout Dimension Rules</label><textarea name="parameter_overrides" rows="5" required placeholder="Describe width, length, clear holes spacing, or bounding geometries..."></textarea></div>
+                <div class="input-row">
+                    <div class="input-group"><label>Upload Reference Drawing</label><div class="file-input-wrapper"><input type="file" name="cad_vector_file" accept="image/*,.pdf" required></div></div>
+                    <div class="input-group"><label>Payment Verification</label><input type="text" name="transaction_verification" required placeholder="Zelle or 'IOU'"></div>
+                </div>
+                <button type="submit" class="submit-btn">Initiate Vector Generation</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
