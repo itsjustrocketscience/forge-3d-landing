@@ -29,14 +29,17 @@
                 <input type="checkbox" name="botcheck" style="display: none;">
 
                 <div class="input-row">
-                    <div class="input-group"><label for="name">Name</label><input type="text" id="name" name="operator_name" required></div>
+                    <div class="input-group"><label for="name">Name</label><input type="text" id="name" name="operator_name" required placeholder="Your Name"></div>
                     <div class="input-group">
-                        <label for="event">Event Focus</label>
+                        <label for="event">Target Event</label>
                         <select id="event" name="target_event" required>
+                            <option value="" disabled selected>Select your event...</option>
                             <option value="Roller Coaster">Roller Coaster</option>
                             <option value="Scrambler">Scrambler</option>
+                            <option value="Boomilever">Boomilever</option>
+                            <option value="Ping Pong Parachute">Ping Pong Parachute</option>
                             <option value="Hovercraft">Hovercraft</option>
-                            <option value="Other">Other Div B</option>
+                            <option value="Elastic Launched Glider">Elastic Launched Glider</option>
                         </select>
                     </div>
                 </div>
