@@ -8,13 +8,19 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #0b0f17;
+    /* UPGRADE 1: RADIAL MESH GLOW BACKGROUND */
+    background: radial-gradient(circle at 50% -10%, #0f2d4a 0%, #050b14 60%, #020408 100%);
+    background-attachment: fixed;
     color: #94a3b8;
     font-family: 'Space Mono', monospace;
     font-size: 0.95rem;
     line-height: 1.6;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 .central-container {
@@ -22,7 +28,68 @@ body {
     margin: 0 auto;
 }
 
-/* SLEEK HERO DESIGN */
+/* UPGRADE 4: CUSTOM CYBER SCROLLBAR */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #020408;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8;
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+/* GLOBAL NAVIGATION BAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+    margin-bottom: 40px;
+}
+
+.nav-logo {
+    color: #f8fafc;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #38bdf8;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+}
+
+/* HERO DESIGN */
 .hero {
     text-align: center;
     padding: 40px 0 60px 0;
@@ -30,10 +97,11 @@ body {
 
 .brand-title {
     color: #f8fafc;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: -1px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(248, 250, 252, 0.1);
 }
 
 .subtitle {
@@ -42,14 +110,23 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* MODERN DASHBOARD CARDS */
+/* UPGRADE 2: GLASSMORPHIC CARDS WITH NEON BORDERS */
 .card {
-    background-color: #131c2e;
-    border: 1px solid #1e293b;
-    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
     padding: 35px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    border-color: rgba(56, 189, 248, 0.2);
+    box-shadow: 0 10px 40px rgba(56, 189, 248, 0.05);
 }
 
 h2 {
@@ -57,6 +134,9 @@ h2 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .section-intro {
@@ -64,13 +144,13 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* SPECS CONTAINER LAYOUT */
+/* SPECS LAYER CONTAINER */
 .specs-wrapper {
     display: flex;
     gap: 40px;
-    background-color: #0b0f17;
+    background-color: rgba(2, 4, 8, 0.5);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     border-left: 4px solid #38bdf8;
     flex-wrap: wrap;
 }
@@ -90,7 +170,7 @@ h2 {
 }
 
 .label {
-    color: #64748b;
+    color: #475569;
     font-weight: 700;
 }
 
@@ -109,17 +189,22 @@ h2 {
 .event-card {
     flex: 1;
     min-width: 380px;
-    background-color: #131c2e;
-    border: 1px solid #1e293b;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 25px;
-    border-radius: 12px;
+    border-radius: 16px;
     position: relative;
-    transition: border-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
+/* GLOWING HOVER STYLES */
 .event-card:hover {
     border-color: #38bdf8;
-    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+    transform: translateY(-3px);
 }
 
 .event-badge {
@@ -143,12 +228,12 @@ h2 {
 
 .event-card p {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: #64748b;
 }
 
-/* INPUT UI MODULES */
+/* UPGRADE 4: MODERN DASHBOARD FORM INPUTS */
 .form-subtitle {
-    color: #64748b;
+    color: #475569;
     margin-bottom: 30px;
     font-size: 0.85rem;
 }
@@ -181,12 +266,12 @@ h2 {
 .input-group textarea {
     width: 100%;
     padding: 12px;
-    background-color: #0b0f17;
-    border: 1px solid #1e293b;
+    background-color: rgba(2, 4, 8, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: #f8fafc;
     font-family: inherit;
     font-size: 0.9rem;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -195,14 +280,19 @@ h2 {
 .input-group textarea:focus {
     outline: none;
     border-color: #38bdf8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
 }
 
 .file-input-wrapper {
-    background-color: #0b0f17;
-    border: 1px dashed #1e293b;
+    background-color: rgba(2, 4, 8, 0.6);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+.file-input-wrapper:hover {
+    border-color: rgba(56, 189, 248, 0.4);
 }
 
 .input-group input[type="file"] {
@@ -212,81 +302,71 @@ h2 {
 
 .input-group small {
     display: block;
-    color: #64748b;
+    color: #475569;
     margin-top: 6px;
     font-size: 0.75rem;
 }
 
-/* PREMIUM ACTION BUTTON */
+/* ACTION BUTTON */
 .submit-btn {
     display: block;
     width: 100%;
     background-color: #38bdf8;
-    color: #0b0f17;
+    color: #020408;
     border: none;
     padding: 16px;
     font-family: inherit;
     font-weight: 700;
     font-size: 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
     margin-top: 10px;
 }
 
 .submit-btn:hover {
     background-color: #0ea5e9;
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
 }
 
 .submit-btn:active {
     transform: scale(0.99);
 }
 
+/* UPGRADE 3: ANIMATED SYSTEM PULSE DOTS */
+.status-beacon {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    position: relative;
+}
+
+.status-beacon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #22c55e;
+    border-radius: 50%;
+    animation: beacon-pulse 2s infinite ease-in-out;
+}
+
+@keyframes beacon-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(3.5); opacity: 0; }
+}
+
 /* CLEAN FOOTER */
 footer {
     text-align: center;
-    color: #475569;
+    color: #334155;
     font-size: 0.8rem;
     margin-top: 80px;
     padding-top: 20px;
-    border-top: 1px dashed #1e293b;
-}
-
-/* GLOBAL NAVIGATION BAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #1e293b;
-    margin-bottom: 40px;
-}
-
-.nav-logo {
-    color: #f8fafc;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #38bdf8;
-}
-
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 15px; }
-    .nav-links { flex-wrap: wrap; justify-content: center; }
+    border-top: 1px dashed rgba(30, 41, 59, 0.5);
 }
